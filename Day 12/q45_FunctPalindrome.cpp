@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int CheckPallindrome(int num){
+bool CheckPallindrome(int num){
     int rev = 0;
     int temp = num;
     while(temp){
@@ -9,10 +9,7 @@ int CheckPallindrome(int num){
         rev += temp%10;
         temp/=10;
     }
-    if(rev==num){
-        return 1;
-    }
-    return 0;
+    return rev==num;
 }
 
 int main(){
