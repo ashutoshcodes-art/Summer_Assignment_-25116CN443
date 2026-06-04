@@ -7,10 +7,7 @@ int main(){
     {
         for (int col = 1; col <= n  ; col++)
         {
-            if(col ==1 || col == n || row == 1 || row== n){
-                cout<<"*";
-            }
-            else cout<< " ";
+            (col ==1 || col == n || row == 1 || row== n) ? cout<<"*" : cout<<" ";
         }
         cout<<endl;
     }
