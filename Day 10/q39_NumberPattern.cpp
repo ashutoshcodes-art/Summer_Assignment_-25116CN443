@@ -18,10 +18,15 @@ int main(){
         {
             cout<<" ";
         }
-        for (int col = 1; col <= 2*row-1; col++)
+        for (int col = 1; col <= row; col++)
         {
-            (col<=row) ? cout<<col : cout<<1;
+            cout<<col;
         }
+        for (int i = row-1; i >= 1; i--)
+        {
+            cout<<i;
+        }
+        
         cout<<endl;
         
     }
