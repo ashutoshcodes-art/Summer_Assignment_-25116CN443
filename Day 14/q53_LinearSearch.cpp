@@ -14,6 +14,8 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<" ]";
-    
+    int num;
+    cout<<"Enter number you wanna search : ";cin>>num;
+
     return 0;
 }
