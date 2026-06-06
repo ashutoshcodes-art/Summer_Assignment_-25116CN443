@@ -15,7 +15,7 @@ int main()
     }
     cout<<" ]"<<endl;
 
-    //Checking frequencies 
+    //Input Sun & Checking for pairs
     int sum;cout<<"Enter sum : ";cin>>sum;
     int pair=0;
     for (int i = 0; i < n; i++)
