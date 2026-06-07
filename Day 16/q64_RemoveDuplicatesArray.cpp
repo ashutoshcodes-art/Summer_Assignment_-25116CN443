@@ -31,7 +31,6 @@ int main(){
                 j--;
             }
         }
-        
     }
      //Result Array
    cout<<"Resultant array is : [ ";

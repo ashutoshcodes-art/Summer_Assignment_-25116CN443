@@ -31,12 +31,37 @@ int main(){
     cout<<" ]"<<endl;
 
     //Merging Arrays
-    vector<int> merg(m+n);
-    
+    int newsize=m+n;
+    vector<int> merg(newsize);
+    for (int i = 0; i < n; i++)
+    {
+        merg[i]=a[i];
+    }
+    for (int i = 0; i < m; i++)
+    {
+        merg[n+i]=b[i];
+    }
+
+    //Removing Duplicates
+    // int tempsize=newsize;
+    for (int i = 0; i < newsize; i++)
+    {
+        for (int j = i+1; j < newsize; j++)
+        {
+            if(merg[i]==merg[j]){
+                for (int k = j; k < newsize-1; k++)
+                {
+                    merg[k]=merg[k+1];
+                }
+                newsize--;j--;
+            }
+        }
+        
+    }
     
      //Result Array
-   cout<<"Merged array is : [ ";
-    for (int i = 0; i < n+m; i++)
+   cout<<"Union of array is : [ ";
+    for (int i = 0; i < newsize; i++)
     {
         cout<<merg[i]<<" ";
     }
