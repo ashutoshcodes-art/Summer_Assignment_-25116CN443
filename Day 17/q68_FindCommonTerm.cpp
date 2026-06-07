@@ -1,3 +1,5 @@
+//It is same as finding intersection
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -30,7 +32,7 @@ int main(){
     }
     cout<<" ]"<<endl;
 
-    //Intersecting Arrays
+    //Intersecting Arrays/Common arrays
     vector<int> merg;
     for (int i = 0; i < n; i++)
     {
@@ -58,7 +60,7 @@ int main(){
         
     }
      //Result Array
-   cout<<"Intersection of array is : [ ";
+   cout<<"Common elements of array is : [ ";
     for (int i = 0; i < merg.size(); i++)
     {
         cout<<merg[i]<<" ";
