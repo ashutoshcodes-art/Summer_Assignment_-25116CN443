@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-int main(){
-    int n;cout<<"Enter number of elements in array : ";cin>>n;
-    int a[n];
+int main()
+{
+    int n;cout<<"Enter number of elements in array : ";cin>>n;if(n<=0){return 0;}
+    vector<int> a(n);
     for (int i = 0; i < n; i++)
     {
         cout<<"Enter ele "<<i+1<<" : ";cin>>a[i];

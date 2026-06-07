@@ -1,10 +1,11 @@
 //This program is to find missing number from 0 to N
 
 #include <iostream>
+#include <vector>
 using namespace std;
 int main(){
     int n;cout<<"Enter a number : ";cin>>n;
-    int a[n-1],N=1;
+    vector<int> a(n-1);int N=1;
     cout<<"Input Array of "<<n-1<<" elements  : "<<endl;
     for (int i = 0; i < n-1; i++)
     {

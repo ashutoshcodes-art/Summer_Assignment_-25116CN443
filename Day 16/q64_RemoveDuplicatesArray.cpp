@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-int main()
-{
+int main(){
+    //Input & Display Array
     int n;cout<<"Enter number of elements in array : ";cin>>n;if(n<=0){return 0;}
-    vector<int> a(n);
+    vector<int> a(n); //Uses Heap memory or use pointer //int*a = new int[n];
     for (int i = 0; i < n; i++)
     {
         cout<<"Enter ele "<<i+1<<" : ";cin>>a[i];
@@ -16,25 +16,29 @@ int main()
     }
     cout<<" ]"<<endl;
 
-//Rotate Array 
-    int k;cout<<"Enter how many times you wanna rotate Right : ";cin>>k;k=k%n;
-    for (int i = 1; i <= k; i++)
+    //Removing Duplicates
+    int term=0;
+    for (int i = 0; i < n; i++)
     {
-        int temp=a[n-1];
-        for (int j = n-2; j >= 0; j--)
+        for (int j = i+1; j < n; j++)
         {
-            a[j+1]=a[j];
+            if(a[i]==a[j]){
+                for (int k = j; k < n-1; k++)
+                {
+                    a[k] = a[k+1];term++;
+                }
+                n--;
+                j--;
+            }
         }
-        a[0]=temp;
+        
     }
-    
-    //Result Array
-   cout<<"Rotated array "<<k<<" times is : [ ";
+     //Result Array
+   cout<<"Resultant array is : [ ";
     for (int i = 0; i < n; i++)
     {
         cout<<a[i]<<" ";
     }
     cout<<" ]"<<endl;
-    
     return 0;
 }
