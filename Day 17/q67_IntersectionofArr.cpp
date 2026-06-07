@@ -30,14 +30,65 @@ int main(){
     }
     cout<<" ]"<<endl;
 
-    //Merging Arrays
+    //Intersecting Arrays
+    int newsize=m+n,postn=0;
+    vector<int> merg(newsize);
+    for (int i = 0; i < n; i++)
+    {
+
+        bool visited = false;
+        for (int j = 0; j < i; j++)
+            {
+                if(a[i]==a[j]){
+                    visited = true;
+                }
+            }
+        if(visited){
+            continue;
+        }
+        else {
+            for (int j = 0; j < m; j++)
+        {
+            if(a[i]==b[j]){
+                merg[postn]= a[i];
+                postn++;
+            }
+        }
+        }
+        
+    }
+    //Remove Duplicates 
+    for (int i = 0; i < newsize; i++)
+    {
+        for (int j = i+1; j < newsize; j++)
+        {
+            if(merg[i]==merg[j]){
+                for (int k = j; k < newsize-1; k++)
+                {
+                    merg[k] = merg[k+1];
+                }
+                n--;
+                j--;
+            }
+        }
+    }
+    //Remove zeroes
+    for (int i = 0; i < newsize; i++)
+    {
+        if(merg[i]==0){
+                newsize--;i--;
+            }
+            
+    }
+    
+
     
      //Result Array
-//    cout<<"Intersection of array is : [ ";
-//     for (int i = 0; i < newsize; i++)
-//     {
-//         cout<<merg[i]<<" ";
-//     }
-//     cout<<" ]"<<endl;
+   cout<<"Intersection of array is : [ ";
+    for (int i = 0; i < newsize; i++)
+    {
+        cout<<merg[i]<<" ";
+    }
+    cout<<" ]"<<endl;
     return 0;
 }
