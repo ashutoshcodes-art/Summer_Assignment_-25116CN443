@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 int main(){
@@ -17,6 +18,9 @@ int main(){
         start++;
         end--;
     }
+
+    // or using reverse() function defined in #include <algorithm>
+    // reverse(str1.begin(),str1.end());
     
     cout<<"Reversed string : "<<str1<<endl;
 
