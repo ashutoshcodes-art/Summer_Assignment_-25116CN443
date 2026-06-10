@@ -7,9 +7,18 @@ int main(){
     cout<<"Enter String : ";
     getline(cin,str1);
     cout<<"Your entered string : "<<str1<<endl;
-
-    //Reversing string
     
+    //Reversing string
+    int start =0;
+    int end = str1.length() -1;
+    while (start<end)
+    {
+        swap(str1[start],str1[end]);
+        start++;
+        end--;
+    }
+    
+    cout<<"Reversed string : "<<str1<<endl;
 
     return 0;
 }
