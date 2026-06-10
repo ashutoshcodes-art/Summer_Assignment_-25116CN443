@@ -24,31 +24,23 @@ void PrintVector(const vector<vector<int>> & mat){  //Without use of & copy of V
 }
 
 int main(){
-    int a,b;cout<<"Enter the dimentions of Matrices in order (m X n): ";cin>>a>>b;
-    //Input Matrices
-    cout<<"Taking Input of matrix : "<<endl;
-    vector<vector<int>> m1(a,vector<int> (b));
-    inputVector(m1);
+    int m, n;cout<<"Enter dimentions of matrix in order (m X n) : ";cin>>m>>n; 
+    vector <vector<int>> Mat(m, vector<int> (n));
+    cout<<"Give Matrice Input : "<<endl;
+    inputVector(Mat);
+    cout<<"Your entered Matrice is : "<<endl;
+    PrintVector(Mat);
 
-    //Printing Input Matrix
-    cout<<"Your Entered first Matrix is : "<<endl;
-    PrintVector(m1);
-
-    //Transposing Matrice
-    vector<vector <int>> Transpose(b,vector <int> (a));
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
+    //Doing Rowwise sum
+    for (int i = 0; i < Mat.size(); i++)
+    {   int Rowsum = 0;
+        for (int j = 0; j < Mat[i].size(); j++)
         {
-            Transpose[j][i]=m1[i][j];
-            
+            Rowsum += Mat[i][j];
         }
-        
+        cout<<"Sum of Row "<<i+1<<" is : "<<Rowsum<<endl;
     }
     
 
-    //Printing Final Matrix
-    cout<<"Transpose of Matrix is : "<<endl;
-    PrintVector(Transpose);
     return 0;
 }

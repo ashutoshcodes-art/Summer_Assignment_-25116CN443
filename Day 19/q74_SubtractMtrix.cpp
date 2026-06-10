@@ -1,48 +1,44 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
+void inputVector(vector<vector<int>> & mat){  //If & is used it is call by reference where org vector is passed
+    for (int i = 0; i < mat.size(); i++)
+    {
+        for (int j = 0; j < mat[i].size(); j++)
+        {
+            cout<<"Enter term ("<<i<<","<<j<<") : ";cin>>mat[i][j];
+        }
+    }
+}
+
+void PrintVector(const vector<vector<int>> & mat){  //Without use of & copy of Vector is passed which will use more stporage
+    for (int i = 0; i < mat.size(); i++)      //const prevents any change in matrix
+    {
+        for (int j = 0; j < mat[i].size(); j++)
+        {
+            cout<<mat[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
+
 int main(){
     int a,b;cout<<"Enter the dimentions of Matrices in order (m X n): ";cin>>a>>b;
     //Input Matrices
     cout<<"Taking Input of first matrix : "<<endl;
     vector<vector<int>> m1(a,vector<int> (b));
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            cout<<"Enter term ("<<i<<","<<j<<") : ";cin>>m1[i][j];
-        }
-    }
+    inputVector(m1);
 
     cout<<"Taking Input of second matrix : "<<endl;
     vector<vector<int>> m2(a,vector<int> (b));
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            cout<<"Enter term ("<<i<<","<<j<<") : ";cin>>m2[i][j];
-        }
-    }
+    inputVector(m2);
 
     //Printing Input Matrix
     cout<<"Your Entered first Matrix is : "<<endl;
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            cout<<m1[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    PrintVector(m1);
     cout<<"Your Entered Second Matrix is : "<<endl;
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            cout<<m2[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    PrintVector(m2);
     
     //Subtracting two martrices
     vector<vector <int>> Subtract(a,vector<int> (b));
@@ -57,14 +53,7 @@ int main(){
 
     //Printing Subtractiton result
     cout<<"Subtractition of 1st & 2nd Matrix is : "<<endl;
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            cout<<Subtract[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    PrintVector(Subtract);
 
 
     return 0;

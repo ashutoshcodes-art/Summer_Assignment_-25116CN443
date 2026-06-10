@@ -24,31 +24,30 @@ void PrintVector(const vector<vector<int>> & mat){  //Without use of & copy of V
 }
 
 int main(){
-    int a,b;cout<<"Enter the dimentions of Matrices in order (m X n): ";cin>>a>>b;
-    //Input Matrices
-    cout<<"Taking Input of matrix : "<<endl;
-    vector<vector<int>> m1(a,vector<int> (b));
-    inputVector(m1);
-
-    //Printing Input Matrix
-    cout<<"Your Entered first Matrix is : "<<endl;
-    PrintVector(m1);
-
-    //Transposing Matrice
-    vector<vector <int>> Transpose(b,vector <int> (a));
-    for (int i = 0; i < a; i++)
+    int n;cout<<"Enter dimentions of matrix in order (n X n) : ";cin>>n; //Only Square Matrices acan be Symmetric or skew symm
+    vector<vector<int>> mat(n,vector<int> (n));
+    cout<<"Taking Matice Input : "<<endl;
+    inputVector(mat);
+    cout<<"Your Entered Matrix is : "<<endl;
+    PrintVector(mat);
+    
+    //Checking symmetric
+    bool symmetric = true;
+    for (int i = 0; i < mat.size(); i++)
     {
-        for (int j = 0; j < b; j++)
+        for (int j = 0; j < mat[i].size(); j++)
         {
-            Transpose[j][i]=m1[i][j];
-            
+            if(i==j){
+                continue;
+            }
+            else if(mat[i][j]!=mat[j][i]){
+                symmetric = false;
+                break;
+            }
         }
         
     }
-    
-
-    //Printing Final Matrix
-    cout<<"Transpose of Matrix is : "<<endl;
-    PrintVector(Transpose);
+    //Giving Result
+    (!symmetric) ? cout<<"Your Matrix is not Symmetric"<<endl :  cout<<"Your Matrix is Symmetric"<<endl;
     return 0;
 }

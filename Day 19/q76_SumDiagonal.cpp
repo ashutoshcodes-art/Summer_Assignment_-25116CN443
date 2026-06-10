@@ -25,7 +25,7 @@ int main(){
         cout<<endl;
     }
 
-    //Transposing Matrice
+    //Taking Diagonals SUm Matrice
     int sum=0;int limit = min(a,b);
     for (int i = 0; i < a; i++)
     {
