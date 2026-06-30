@@ -163,7 +163,6 @@ void CancelTicket(vector<Show>& a){
             }
         }
         
-        
     }
 }
 
